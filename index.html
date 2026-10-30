@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đồng hồ và Ghi chú</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--video-->
+    <div style="text-align: center">
+      <video autoplay loop controls playsinline height="400px" width="700px">
+        <source src="images/videoplayback.mp4" />
+      </video>
+    </div>
+    <!--tiêu đề-->
+    <div class="container">
+      <h1>Đồng Hồ</h1>
+
+      <!-- Nút chuyển đến bộ hẹn giờ -->
+      <div class="center">
+        <button class="purple" onclick="toggleStopwatchPage()">
+          ⏰ Bộ hẹn giờ
+        </button>
+      </div>
+
+      <!-- Bộ hẹn giờ đếm ngược -->
+      <div class="card" id="stopwatchPage" hidden>
+        <h2>⏰ Bộ hẹn giờ</h2>
+
+        <input
+          id="timerName"
+          type="text"
+          placeholder="Tên bộ hẹn giờ (ví dụ: Học bài)"
+        />
+
+        <div class="timer-inputs">
+          <div>
+            <label for="timerHour">Giờ</label>
+            <input id="timerHour" type="number" min="0" max="99" value="0" />
+          </div>
+
+          <div>
+            <label for="timerMinute">Phút</label>
+            <input id="timerMinute" type="number" min="0" max="59" value="1" />
+          </div>
+
+          <div>
+            <label for="timerSecond">Giây</label>
+            <input id="timerSecond" type="number" min="0" max="59" value="0" />
+          </div>
+        </div>
+
+        <div id="countdownDisplay">00:01:00</div>
+
+        <div class="center">
+          <button class="green" onclick="startCountdown()">▶ Bắt đầu</button>
+          <button class="gray" onclick="pauseCountdown()">⏸ Tạm dừng</button>
+          <button class="red" onclick="resetCountdown()">↻ Đặt lại</button>
+        </div>
+
+        <p id="countdownStatus">Sẵn sàng</p>
+      </div>
+
+      <!-- Đồng hồ bấm giờ -->
+      <div class="card">
+        <h2>Đồng hồ bấm giờ</h2>
+
+        <div id="clock">00:00:00</div>
+
+        <div class="center">
+          <button class="green" onclick="startTimer()">Bắt đầu</button>
+          <button class="gray" onclick="stopTimer()">Tạm dừng</button>
+          <button class="red" onclick="resetTimer()">Đặt lại</button>
+          <button class="blue" onclick="saveTime()">Lưu giờ</button>
+        </div>
+      </div>
+
+      <!-- Lịch sử giờ -->
+      <div class="card">
+        <h2>📋 Lịch sử giờ đã lưu</h2>
+        <div id="timeList"></div>
+      </div>
+
+      <!-- Ghi chú -->
+      <div class="card">
+        <h2>📝 Ghi chú</h2>
+
+        <input id="noteTitle" placeholder="Nhập tiêu đề ghi chú" />
+
+        <textarea
+          id="noteContent"
+          placeholder="Nhập nội dung ghi chú..."
+        ></textarea>
+
+        <button class="blue" onclick="addNote()">Thêm ghi chú</button>
+
+        <div id="noteList"></div>
+      </div>
+
+      <!-- Thông báo -->
+      <div class="card">
+        <h2>🔔 Nhắc nhở</h2>
+
+        <input id="reminderText" placeholder="Nội dung nhắc nhở" />
+
+        <label for="reminderTime">Thời gian thông báo:</label>
+        <input id="reminderTime" type="datetime-local" />
+
+        <button class="blue" onclick="addReminder()">Tạo nhắc nhở</button>
+
+        <div id="reminderList"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
