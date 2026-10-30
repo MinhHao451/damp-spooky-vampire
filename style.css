@@ -1,0 +1,187 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #eef2ff;
+  margin: 0;
+  padding: 30px 15px;
+  color: #1e293b;
+  background-image: url(images/tải\ xuống\ \(1\).jpg);
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #ec0a0a;
+  margin-bottom: 25px;
+  background-color: #4338ca;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px #00000010;
+}
+
+h2 {
+  margin-top: 0;
+  color: #4338ca;
+}
+
+#clock {
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  margin: 25px 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 4px;
+  color: white;
+  font-size: 14px;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.green {
+  background: #16a34a;
+}
+
+.red {
+  background: #dc2626;
+}
+
+.gray {
+  background: #64748b;
+}
+
+.blue {
+  background: #4f46e5;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 11px;
+  margin: 8px 0 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin-top: 8px;
+}
+
+.item {
+  padding: 12px;
+  margin-top: 10px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 4px solid #4f46e5;
+  overflow-wrap: anywhere;
+}
+
+.item button {
+  float: right;
+}
+
+.date {
+  color: #64748b;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.content {
+  white-space: pre-wrap;
+}
+
+@media (max-width: 500px) {
+  #clock {
+    font-size: 35px;
+  }
+
+  .card {
+    padding: 15px;
+  }
+}
+
+.purple {
+  background: #c86dcc;
+  color: white;
+}
+
+.timer-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.timer-inputs div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100px;
+}
+
+.timer-inputs label {
+  text-align: center;
+}
+
+.timer-inputs input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}
+
+#countdownDisplay {
+  margin: 20px 0;
+  text-align: center;
+  font-size: clamp(36px, 7vw, 56px);
+  font-weight: bold;
+  font-variant-numeric: tabular-nums;
+  color: #d77bd0;
+}
+
+#countdownStatus {
+  text-align: center;
+  color: #aaa;
+}
+
+#stopwatchPage[hidden] {
+  display: none;
+}
+
+@media (max-width: 400px) {
+  .timer-inputs {
+    gap: 8px;
+  }
+
+  .timer-inputs div {
+    width: 30%;
+  }
+}
